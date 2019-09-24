@@ -1,10 +1,10 @@
 #include <iostream>
- 
-// 函数声明 
+
+// 函数声明
 void func(void);
- 
+
 static int count = 10; /* 全局变量 */
- 
+
 int main()
 {
     while(count--)
