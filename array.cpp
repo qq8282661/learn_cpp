@@ -27,27 +27,40 @@ int main() {
 //        cout << setw(7) << j << setw(13) << n[j] << endl;
 //    }
 //    return 0;
+    cout << "数组指针测试" << endl;
     int arr[] = {1, 2, 3, 4};
     int *p = arr;
     for (unsigned long i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
-        cout << arr[i + 1] << endl;
-
+        cout << *(p + i) << endl;
     }
+
+    cout << "函数传入指针" << endl;
     unsigned long sec;
     getSeconds(&sec);
     cout << sec << endl;
-    // 返回i数组的函数
+
+    cout << "函数不可以返回数组，可以换回指向数组的指针" << endl;
     int *ip = nullptr;
     ip = getArr();
     for (unsigned long i = 0; i < 3; i++) {
         cout << *(ip + i) << endl;
     }
-    // 遍历数组
+
+    cout << "语法糖遍历数组" << endl;
     int arr1[3] = {2, 3, 4};
     for (int &i:arr1) {
         cout << i << endl;
     }
+
+    cout << "指向二维数组的指针" << endl;
+    int a[3][4] = {{0, 1, 2,  3},
+                   {4, 5, 6,  7},
+                   {8, 9, 10, 11}};
+    int (*tp)[4] = a;
+    cout << *(*(tp)) << endl; //指向数组第一行元素
+    cout << *(tp) + 1 << endl;
 }
+
 
 void getSeconds(unsigned long *par) {
     *par = time(nullptr);

@@ -12,11 +12,15 @@ int main() {
     int *p = &a;
     cout << b << endl;
     cout << *p << endl;
-
     cout << &a << endl;
     cout << &b << endl;
     cout << p << endl;
     bool res = p == &b;
     cout << boolalpha << res << endl;
 
+    cout << "字符串的指针：" << endl;
+
+    char hello[] = "word";
+    char *c = hello;
+    cout << *c << endl;
 }
